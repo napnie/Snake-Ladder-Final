@@ -11,6 +11,7 @@ public class Game {
 	private List<BoardAction> replay;
 	
 	private int currentPlayerIndex;
+	/** Status of the game. */
 	private boolean ended;
 	
 	public Game(int playerNum) {
