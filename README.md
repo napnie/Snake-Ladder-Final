@@ -1,13 +1,13 @@
 # Snake & Ladder Game
 by 
 * Nitith Chayakul 5910545736
-* Patiphan
+* Patiphan Srisook 5910546422
 
 ### Docs
 * [~~UML~~](docs/snake_uml.png) (need update)
 * Domain Model
 
-### Wrok left
+### Work left
 * Replay
 * ~~Backward square~~
 * ~~Freeze square~~ (need UI work)
@@ -18,4 +18,4 @@ by
 * ~~Snake square~~
 * UI
 
-[Project Requirment](https://github.com/KeeUka/SSD_2018_Final)
+[Project Requirement](https://github.com/KeeUka/SSD_2018_Final)
