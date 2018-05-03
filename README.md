@@ -4,8 +4,8 @@ by
 * Patiphan Srisook 5910546422
 
 ### Docs
-* [~~UML~~](docs/snake_uml.png) (need update)
-* Domain Model
+* [UML](docs/snake_uml.png)
+* [Domain Model]
 
 ### Work left
 * Replay
@@ -17,5 +17,7 @@ by
 * ~~Ladder square~~
 * ~~Snake square~~
 * UI
+* UML (need update)
+* Domain Model
 
 [Project Requirement](https://github.com/KeeUka/SSD_2018_Final)
