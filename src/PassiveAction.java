@@ -36,4 +36,5 @@ public class PassiveAction extends BoardAction {
 		// nothing
 	}
 
+	public String toString() { return "do nothing"; }
 }

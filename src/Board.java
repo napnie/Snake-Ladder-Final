@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Board {
 	
-	private static final int SIZE = 64;
+	private static final int SIZE = 10;
 	private Square[] squares;
 	
 	public Board() {
@@ -28,6 +28,12 @@ public class Board {
 	
 	private int randomSquare() {
 		return 1 + new Random().nextInt(squares.length - 4);
+	}
+	
+	public void reset() {
+		for(Square s : squares) {
+			s.clearPlayer();
+		}
 	}
 	
 	public void addPlayer(Player player, int position) {

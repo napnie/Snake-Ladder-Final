@@ -26,5 +26,11 @@ public class MoveAction extends BoardAction {
 	public void action(Board board) {
 		board.movePiece(player, step);
 	}
+	
+	public String toString() {
+		return "move " + step + " step!";
+	}
+	
+	public int getStep() { return step; }
 
 }

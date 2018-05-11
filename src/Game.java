@@ -16,8 +16,6 @@ public class Game {
 	
 	public Game(int playerNum) {
 		players = new Player[playerNum];
-		players[0] = new Player("P1");
-		players[1] = new Player("P2");
 		for(int i=0 ; i<playerNum ; i++) {
 			players[i] = new Player("P"+i);
 		}
@@ -25,12 +23,20 @@ public class Game {
 		die = new Die();
 		board = new Board();
 		replay = new ArrayList<BoardAction>();
-		ended = false;
-		
-		for(Player player: players) {
-			board.addPlayer(player, 0);
-		}
+		reset();
 	}
+	
+	public void reset() {
+		board.reset();
+		for(Player p : players) {
+			p.unFreeze();
+			board.addPlayer(p, 0);
+		}
+		currentPlayerIndex = 0;
+		ended = false;
+	}
+	
+	public void clearReplay() { replay.clear(); }
 	
 	public boolean isEnded() { return ended; }
 	
@@ -44,24 +50,33 @@ public class Game {
 	
 	public int currentPlayerPosition() { return board.getPlayerPosition(currentPlayer()); }
 	
-	public int currentPlayerRollDice() {
-		if( !currentPlayer().isFreeze() ) {
-			return currentPlayer().roll(die);
-		}
-		return 0;
+	public boolean isCurrentPlayerFreezing() {
+		return currentPlayer().isFreeze();
 	}
 	
-	public void currentPlayerMovePiece(int step ) { 
-//		currentPlayer().movePiece(board, step); 
+	public void unfreeze() { currentPlayer().unFreeze(); }
+	
+	public int currentPlayerRollDice() {
+		return currentPlayer().roll(die);
+	}
+	
+	public String excuteAction() {
+		BoardAction effect = board.getAction(currentPlayer());
+		return excuteAction(effect);
+	}
+	
+	public String excuteAction(BoardAction action) {
+		action.action(board);
+		replay.add(action);
+		return currentPlayerName() + " " + action.toString();
+	}
+	
+	public String currentPlayerMovePiece(int step ) {
+		BoardAction roll = new RollAction(currentPlayer(), step);
 		BoardAction move = new MoveAction(currentPlayer(), step);
-		move.action(board);
-		replay.add(move);
-
-		BoardAction action = board.getAction(currentPlayer());
-		if( action != PassiveAction.getInstance() ) {
-			action.action(board);
-			replay.add(action);
-		}
+		String moving = excuteAction(roll);
+		moving += "\n" + excuteAction(move);
+		return moving;
 	}
 	
 	public boolean currentPlayerWins() { return board.pieceIsAtGoal(currentPlayer()); }
@@ -73,4 +88,6 @@ public class Game {
 	public String getSquareType() {
 		return board.getSquareType(currentPlayer() );
 	}
+	
+	public List<BoardAction> getReplay() { return replay; }
 }

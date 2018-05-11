@@ -8,15 +8,15 @@ by
 * [Domain Model]
 
 ### Work left
-* Replay
+* ~~Replay~~
 * ~~Backward square~~
-* ~~Freeze square~~ (need UI work)
-* Player get extra turn if rolled 6
-* Restart the game
-* Select number of player
+* ~~Freeze square~~
+* ~~Player get extra turn if rolled 6~~
+* ~~Restart the game~~
+* ~~Select number of player~~
 * ~~Ladder square~~
 * ~~Snake square~~
-* UI
+* ~~UI~~
 * UML (need update)
 * Domain Model
 
