@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Board {
 	
-	private static final int SIZE = 10;
+	private static final int SIZE = 64;
 	private Square[] squares;
 	
 	public Board() {
@@ -17,7 +17,7 @@ public class Board {
 			event = randomSquare();
 			squares[event].setBackwardState();
 			event = randomSquare();
-			squares[event].setLadderState(new Random().nextInt(squares.length - event - 1 - 3) + 1);
+			squares[event].setLadderState(new Random().nextInt(squares.length - event - 1 - 3) + 1 - event);
 			event = randomSquare();
 			squares[event].setSnakeState((new Random().nextInt(event) + 1) * -1);
 		}
