@@ -47,21 +47,21 @@ public class ConsoleUI {
 			if( roll instanceof RollAction ) {
 				RollAction rollCast = (RollAction) roll;
 				BoardAction move = replay.get(i++);
-				String rollAct = game.excuteAction(rollCast);
+				String rollAct = game.executeAction(rollCast);
 				System.out.println( rollAct );
-				System.out.println( game.excuteAction(move) );
+				System.out.println( game.executeAction(move) );
 				
 				if( rollCast.getFace() == 6 ) {
 					BoardAction roll2 = replay.get(i++);
 					BoardAction move2 = replay.get(i++);
-					System.out.println( game.excuteAction(roll2) );
-					System.out.println( game.excuteAction(move2) );
+					System.out.println( game.executeAction(roll2) );
+					System.out.println( game.executeAction(move2) );
 				}
 			}
 			
 			System.out.println("Land in " + game.getSquareType() + " at " + game.currentPlayerPosition() );
 			BoardAction effect = replay.get(i);
-			System.out.println( game.excuteAction(effect) );
+			System.out.println( game.executeAction(effect) );
 			System.out.println("Position: " + game.currentPlayerPosition());
 			if(game.currentPlayerWins()) {
 				System.out.println(game.currentPlayerName() + " Win!");
@@ -97,7 +97,7 @@ public class ConsoleUI {
 			}
 			
 			System.out.println("Land in " + game.getSquareType() + " at " + game.currentPlayerPosition() );
-			System.out.println( game.excuteAction() );
+			System.out.println( game.executeAction() );
 			System.out.println("Position: " + game.currentPlayerPosition());
 			if(game.currentPlayerWins()) {
 				System.out.println(game.currentPlayerName() + " Win!");

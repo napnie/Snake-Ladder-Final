@@ -60,12 +60,12 @@ public class Game {
 		return currentPlayer().roll(die);
 	}
 	
-	public String excuteAction() {
+	public String executeAction() {
 		BoardAction effect = board.getAction(currentPlayer());
-		return excuteAction(effect);
+		return executeAction(effect);
 	}
 	
-	public String excuteAction(BoardAction action) {
+	public String executeAction(BoardAction action) {
 		action.action(board);
 		replay.add(action);
 		return currentPlayerName() + " " + action.toString();
@@ -74,12 +74,12 @@ public class Game {
 	public String currentPlayerMovePiece(int step ) {
 		BoardAction roll = new RollAction(currentPlayer(), step);
 		BoardAction move = new MoveAction(currentPlayer(), step);
-		String moving = excuteAction(roll);
-		moving += "\n" + excuteAction(move);
+		String moving = executeAction(roll);
+		moving += "\n" + executeAction(move);
 		return moving;
 	}
 	
-	public boolean currentPlayerWins() { return board.pieceIsAtGoal(currentPlayer()); }
+	public boolean currentPlayerWins() { return board.playerIsAtGoal(currentPlayer()); }
 	
 	/**
 	 * Return type of square that current player is on.

@@ -62,7 +62,7 @@ public class Board {
 		return squares[position].getAction(player);
 	}
 	
-	public boolean pieceIsAtGoal(Player player) {
+	public boolean playerIsAtGoal(Player player) {
 		return squares[getPlayerPosition(player)].isGoal();
 	}
 	
