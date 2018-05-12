@@ -9,7 +9,7 @@ by
 ![UML](./docs/snake_uml.png)
 
 ## Domain Model
-![Domain Model](./docs/snake_domain,png)
+![Domain Model](./docs/snake_domain.png)
 
 ### Work left
 * ~~Replay~~
@@ -22,6 +22,6 @@ by
 * ~~Snake square~~
 * ~~UI~~
 * ~~UML (need update)~~
-* Domain Model
+* ~~Domain Model~~
 
 [Project Requirement](https://github.com/KeeUka/SSD_2018_Final)
