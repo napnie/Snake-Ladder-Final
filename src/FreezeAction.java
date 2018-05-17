@@ -21,5 +21,9 @@ public class FreezeAction extends BoardAction {
 	public void action(Board board) {
 		player.freeze();
 	}
+	
+	public String toString() {
+		return "freez for 1 turn";
+	}
 
 }

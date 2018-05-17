@@ -17,9 +17,9 @@ public class Board {
 			event = randomSquare();
 			squares[event].setBackwardState();
 			event = randomSquare();
-			squares[event].setLadderState(new Random().nextInt(squares.length - 2 - event));
+			squares[event].setLadderState(new Random().nextInt(squares.length - event - 1 - 3) + 1 - event);
 			event = randomSquare();
-			squares[event].setSnakeState(-1 * new Random().nextInt(event));
+			squares[event].setSnakeState((new Random().nextInt(event) + 1) * -1);
 		}
 		squares[squares.length - 1].setGoalState();
 		
@@ -28,6 +28,12 @@ public class Board {
 	
 	private int randomSquare() {
 		return 1 + new Random().nextInt(squares.length - 4);
+	}
+	
+	public void reset() {
+		for(Square s : squares) {
+			s.clearPlayer();
+		}
 	}
 	
 	public void addPlayer(Player player, int position) {
@@ -56,7 +62,7 @@ public class Board {
 		return squares[position].getAction(player);
 	}
 	
-	public boolean pieceIsAtGoal(Player player) {
+	public boolean playerIsAtGoal(Player player) {
 		return squares[getPlayerPosition(player)].isGoal();
 	}
 	

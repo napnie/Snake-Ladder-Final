@@ -23,4 +23,7 @@ public abstract class BoardAction {
 	 */
 	public abstract void action(Board board);
 
+	public boolean isPlayer(Player player) {
+		return this.player == player;
+	}
 }

@@ -31,6 +31,10 @@ public class Square {
 		players.remove(player);
 	}
 	
+	public void clearPlayer() {
+		players.clear();
+	}
+	
 	public boolean hasPlayer(Player player) {
 		return players.contains(player);
 	}
