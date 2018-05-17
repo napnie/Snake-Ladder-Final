@@ -17,7 +17,7 @@ public class Game {
 	public Game(int playerNum) {
 		players = new Player[playerNum];
 		for(int i=0 ; i<playerNum ; i++) {
-			players[i] = new Player("P"+i);
+			players[i] = new Player("P"+(i+1) );
 		}
 		
 		die = new Die();
