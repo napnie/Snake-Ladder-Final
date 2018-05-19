@@ -2,6 +2,7 @@
 by 
 * Nitith Chayakul 5910545736
 * Patiphan Srisook 5910546422
+* Pittayut Sothanakul 5910546678
 
 ## Installation
 You can download the lastest version [__HERE__](https://github.com/napnie/Snake-Ladder-Final/releases)
