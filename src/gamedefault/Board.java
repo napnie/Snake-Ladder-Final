@@ -64,15 +64,15 @@ public class Board {
 		addPiece(piece, newPos);
 	}
 
+	public boolean pieceIsAtGoal(Piece piece) {
+		return squares[getPiecePos(piece)].isGoal();
+	}
+
 	public int getPiecePos(Piece piece) {
 		for (Square s : squares)
 			if (s.hasPiece(piece))
 				return s.getNumber();
 		return -1;
-	}
-
-	public boolean pieceIsAtGoal(Piece piece) {
-		return squares[getPiecePos(piece)].isGoal();
 	}
 
 	public Square getSquare(int pos) {
