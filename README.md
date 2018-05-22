@@ -10,7 +10,7 @@ You can download the lastest version [__HERE__](https://github.com/napnie/Snake-
 ## Docs
 
 ### UML
-![UML](./docs/snake_uml.png)
+![uml_snake](https://user-images.githubusercontent.com/25226462/40368216-75308d02-5e05-11e8-8010-099d51300c0b.jpg)
 
 ### Domain Model
 ![Domain Model](./docs/snake_domain.png)
